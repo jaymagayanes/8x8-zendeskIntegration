@@ -16,7 +16,7 @@
 const CONFIG = {
   subdomain: 'cambridgepressassessment',
   email:     'jmagayanes.cambridge@gmail.com',
-  apiToken:  'R48mo0VqIEKSIdbdinE14ZMscOBRW6aj797VosRs',        
+  apiToken:  '',        
 };
 // ────────────────────────────────────────────────────
 
