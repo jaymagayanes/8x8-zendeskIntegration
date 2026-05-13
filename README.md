@@ -5,7 +5,7 @@ A browser-based agent dashboard that simulates the integration between
 where an inbound call automatically triggers ticket creation, with every
 integration step logged in real time.
 
-Demo video 🎥 https://drive.google.com/file/d/1argp2Fxxgs-8NRuDg1HkkqA9USlF2lA2/view?usp=sharing
+[Watch Demo Video](https://drive.google.com/file/d/1argp2Fxxgs-8NRuDg1HkkqA9USlF2lA2/view?usp=sharing)
 
 ---
 
