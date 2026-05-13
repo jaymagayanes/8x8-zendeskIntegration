@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>8x8 · Zendesk Integration Simulator</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="brand">
+        <span class="brand-8x8">8x8</span>
+        <span class="brand-sep">⟷</span>
+        <span class="brand-zd">Zendesk</span>
+      </div>
+      <span class="brand-label">Integration Simulator</span>
+    </div>
+    <div class="topbar-right">
+      <div class="agent-status">
+        <span class="status-dot" id="agentDot"></span>
+        <span id="agentStatusLabel">Available</span>
+      </div>
+      <div class="conn-status" id="connStatus">
+        <span class="conn-dot"></span>
+        <span id="connLabel">Connecting…</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN LAYOUT -->
+  <div class="shell">
+
+    <!-- LEFT: CALL QUEUE (8x8) -->
+    <section class="panel panel-calls">
+      <div class="panel-header">
+        <div class="panel-title">
+          <span class="panel-icon">📞</span>
+          Inbound Call Queue
+          <span class="badge" id="queueCount">0</span>
+        </div>
+        <span class="panel-sub">Simulated via 8x8 Voice</span>
+      </div>
+
+      <div class="call-list" id="callList">
+        <div class="empty-queue" id="emptyQueue">
+          <div class="eq-pulse"></div>
+          <p>Waiting for incoming calls…</p>
+        </div>
+      </div>
+
+      <div class="panel-footer">
+        <button class="btn-simulate" id="btnSimulate" onclick="simulateCall()">
+          + Simulate Incoming Call
+        </button>
+      </div>
+    </section>
+
+    <!-- RIGHT: ZENDESK FEED + LOG -->
+    <div class="panel-right">
+
+      <!-- TICKET FEED -->
+      <section class="panel panel-tickets">
+        <div class="panel-header">
+          <div class="panel-title">
+            <span class="panel-icon">🎫</span>
+            Zendesk Ticket Feed
+            <span class="badge" id="ticketCount">0</span>
+          </div>
+          <span class="panel-sub">Auto-created on call answer</span>
+        </div>
+        <div class="ticket-list" id="ticketList">
+          <div class="empty-tickets">
+            <p>Tickets will appear here when calls are answered.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EVENT LOG -->
+      <section class="panel panel-log">
+        <div class="panel-header">
+          <div class="panel-title">
+            <span class="panel-icon">⚡</span>
+            Integration Event Log
+          </div>
+          <button class="btn-clear" onclick="clearLog()">Clear</button>
+        </div>
+        <div class="log-body" id="logBody">
+          <div class="log-line log-info">
+            <span class="log-time">--:--:--</span>
+            <span class="log-msg">System ready. Waiting for events…</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
